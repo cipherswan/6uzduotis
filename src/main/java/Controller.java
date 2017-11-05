@@ -3,13 +3,25 @@ import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.Initializable;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.beans.IntrospectionException;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class Controller {
 
@@ -32,6 +44,9 @@ public class Controller {
     public TextArea quoteArea;
     public Label labelAuthor;
     public Label labelCategory;
+    public Button changeCSS;
+    public VBox box;
+
 
     public void getCountry(ActionEvent actionEvent) throws UnirestException {
         String code = codeField.getText();
@@ -70,10 +85,6 @@ public class Controller {
 
         numberLabel.setText(number.toString());
         textAreaNumbers.setText(text);
-
-
-
-
     }
 
     public void getQuote(ActionEvent actionEvent) throws UnirestException {
@@ -91,5 +102,15 @@ public class Controller {
         labelAuthor.setText(author);
         labelCategory.setText(category);
         quoteArea.setText(quote);
+    }
+
+    public void changeTheme(ActionEvent actionEvent) {
+        String style = getClass().getResource("theme01.css").toExternalForm();
+        String style2 = getClass().getResource("theme02.css").toExternalForm();
+        box.getStylesheets().remove(style);
+
+        box.getStylesheets().addAll(style);
+
+
     }
 }

@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="329.0" prefWidth="547.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<VBox prefHeight="329.0" prefWidth="547.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller" fx:id="box">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="358.0" prefWidth="547.0" VBox.vgrow="ALWAYS">
          <children>
@@ -91,6 +91,7 @@
                                     <Label id="codeLabel" fx:id="codeLabel" prefHeight="17.0" prefWidth="77.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                  </children>
                               </GridPane>
+                              <Button layoutX="97.0" layoutY="227.0" fx:id="changeCSS" mnemonicParsing="false" text="Change theme" onAction="#changeTheme" />
                            </children>
                         </AnchorPane>
                   </content>
@@ -103,7 +104,7 @@
                               <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="57.0" layoutY="55.0" prefHeight="17.0" prefWidth="124.0" text="Enter a number:  " />
                               <TextField id="numberField" fx:id="numberField" layoutX="181.0" layoutY="51.0" prefHeight="25.0" prefWidth="185.0" />
                               <TextArea id="textAreaNumbers" fx:id="textAreaNumbers" layoutX="27.0" layoutY="155.0" prefHeight="108.0" prefWidth="239.0" wrapText="true" />
-                              <Button id="btnNumbers" layoutX="266.0" layoutY="86.0" mnemonicParsing="false" onAction="#getNumber" text="Get information" />
+                              <Button id="btnNumbers" layoutX="266.0" layoutY="86.0" mnemonicParsing="false" onAction="#getNumber" fx:id="infoButton" text="Get information" />
                               <Label layoutX="27.0" layoutY="111.0" text="Number:">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
