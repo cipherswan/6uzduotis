@@ -7,10 +7,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import org.json.JSONArray;
@@ -46,6 +43,7 @@ public class Controller {
     public Label labelCategory;
     public Button changeCSS;
     public VBox box;
+    public Hyperlink helpLink;
 
 
     public void getCountry(ActionEvent actionEvent) throws UnirestException {
@@ -109,8 +107,25 @@ public class Controller {
         String style2 = getClass().getResource("theme02.css").toExternalForm();
         box.getStylesheets().remove(style);
 
-        box.getStylesheets().addAll(style);
+        if (box.getStylesheets().contains(style2))
+        {
+            box.getStylesheets().remove(style2);
+            box.getStylesheets().addAll(style);
+        }
+        else
+        {
+            box.getStylesheets().remove(style);
+            box.getStylesheets().addAll(style2);
+        }
+    }
 
+    public void getHelp(ActionEvent actionEvent) {
+        String helpMessage = "To get an information about a country, type in the code of the desired country and press OK." +
+                System.lineSeparator() + System.lineSeparator() +
+                "To get information about your desired number, enter the number and press the button labeled 'Get information'" +
+                System.lineSeparator() + System.lineSeparator() +
+                "To get a random quote, just press the button labeled 'Get random quote'";
 
+        new Alert(Alert.AlertType.INFORMATION, helpMessage).showAndWait();
     }
 }
