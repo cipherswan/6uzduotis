@@ -14,17 +14,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="283.0" prefWidth="547.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<VBox prefHeight="329.0" prefWidth="547.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="357.0" prefWidth="516.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="358.0" prefWidth="547.0" VBox.vgrow="ALWAYS">
          <children>
-            <TabPane prefHeight="248.0" prefWidth="547.0" tabClosingPolicy="UNAVAILABLE">
+            <TabPane prefHeight="329.0" prefWidth="547.0" tabClosingPolicy="UNAVAILABLE">
               <tabs>
                 <Tab text="Countries">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="219.0" prefWidth="528.0">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="294.0" prefWidth="547.0">
                            <children>
-                              <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="-26.0" layoutY="13.0" prefHeight="20.0" prefWidth="254.0" text="Get information about a country">
+                              <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="15.0" layoutY="14.0" prefHeight="20.0" prefWidth="215.0" text="Get information about a country">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
@@ -97,16 +97,62 @@
                 </Tab>
                 <Tab text="Numbers">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="323.0" prefWidth="547.0">
                            <children>
                               <Accordion layoutX="160.0" layoutY="98.0" />
-                              <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="57.0" layoutY="55.0" prefHeight="17.0" prefWidth="124.0" text="Number:  " />
+                              <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="57.0" layoutY="55.0" prefHeight="17.0" prefWidth="124.0" text="Enter a number:  " />
                               <TextField id="numberField" fx:id="numberField" layoutX="181.0" layoutY="51.0" prefHeight="25.0" prefWidth="185.0" />
-                              <TextArea id="textAreaNumbers" fx:id="textAreaNumbers" layoutX="142.0" layoutY="110.0" prefHeight="108.0" prefWidth="239.0" />
-                              <Button onAction="#getNumber" id="btnNumbers" layoutX="388.0" layoutY="60.0" mnemonicParsing="false" text="Button" />
+                              <TextArea id="textAreaNumbers" fx:id="textAreaNumbers" layoutX="27.0" layoutY="155.0" prefHeight="108.0" prefWidth="239.0" wrapText="true" />
+                              <Button id="btnNumbers" layoutX="266.0" layoutY="86.0" mnemonicParsing="false" onAction="#getNumber" text="Get information" />
+                              <Label layoutX="27.0" layoutY="111.0" text="Number:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Label>
+                              <Label layoutX="27.0" layoutY="138.0" text="A fact about the number:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Label>
+                              <Label id="numberLabel" fx:id="numberLabel" layoutX="88.0" layoutY="111.0" prefHeight="17.0" prefWidth="43.0" text="Label" />
+                              <Label layoutX="14.0" layoutY="14.0" text="Get information about a number">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
                            </children></AnchorPane>
                   </content>
                 </Tab>
+                  <Tab text="Quotes">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="194.0" layoutY="194.0" mnemonicParsing="false" onAction="#getQuote" text="Get a random quote" />
+                              <TextArea id="quoteArea" fx:id="quoteArea" layoutX="33.0" layoutY="117.0" prefHeight="69.0" prefWidth="285.0" wrapText="true" />
+                              <Label layoutX="33.0" layoutY="98.0" text="Quote:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="28.0" layoutY="50.0" text="Author:  ">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="17.0" layoutY="74.0" text="Category:  ">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label id="labelAuthor" fx:id="labelAuthor" layoutX="78.0" layoutY="50.0" />
+                              <Label id="labelCategory" fx:id="labelCategory" layoutX="78.0" layoutY="74.0" />
+                              <Label layoutX="14.0" layoutY="14.0" text="Get a random quote">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
               </tabs>
             </TabPane>
          </children>
